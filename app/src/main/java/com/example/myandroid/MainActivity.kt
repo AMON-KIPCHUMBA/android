@@ -111,7 +111,8 @@ fun RegisterScreen(){
             .wrapContentWidth()
             .align(Alignment.CenterHorizontally)
             .clickable {
-                val intent = Intent(context,AddproductActivity::class.java)
+                val intent = Intent(context,AddproductActivity
+                ::class.java)
                 context.startActivity(intent)
             })
 
