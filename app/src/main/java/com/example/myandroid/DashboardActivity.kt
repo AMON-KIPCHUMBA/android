@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -57,7 +58,7 @@ fun DashboardScreen(){
             contentDescription = "Dashboard background image",
             contentScale = ContentScale.FillBounds)
     }
-    Column (modifier = Modifier.fillMaxSize(), horizontalAlignment = Alignment.CenterHorizontally){
+    Column (modifier = Modifier.fillMaxSize().background(Color.Black), horizontalAlignment = Alignment.CenterHorizontally){
         TopAppBar(
             title = { Text(text = "SpringField ") }, navigationIcon = {
                 IconButton(onClick = {}){
@@ -78,9 +79,9 @@ fun DashboardScreen(){
 
             },
             colors = TopAppBarDefaults.topAppBarColors(
-                containerColor = Color.Cyan,
-                titleContentColor = Color.Black,
-                navigationIconContentColor = Color.DarkGray)
+                containerColor = Color.Black,
+                titleContentColor = Color.White,
+                navigationIconContentColor = Color.White)
         )
         Row (modifier = Modifier.wrapContentWidth()){
             Card (modifier = Modifier.padding(15.dp),

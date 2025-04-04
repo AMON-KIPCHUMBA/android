@@ -61,15 +61,16 @@ class LoginActivity : ComponentActivity() {
         val context = LocalContext.current
         Column (modifier = Modifier
             .fillMaxHeight()
-            .fillMaxWidth(), verticalArrangement = Arrangement.Top){
+            .fillMaxWidth()
+            .background(color = Color.Black), verticalArrangement = Arrangement.Top){
             Text(text = "Welcome Back !!",
                 fontSize = 40.sp,
-                color = Color.Magenta,
+                color = Color.White,
                 fontFamily = FontFamily.Cursive,
                 fontStyle = FontStyle.Normal,
                 textAlign = TextAlign.Center,
                 modifier = Modifier
-                    .background(Color.Cyan)
+                    .background(Color.Black)
                     .padding(40.dp)
                     .fillMaxWidth()
             )

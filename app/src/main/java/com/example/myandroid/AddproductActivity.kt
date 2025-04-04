@@ -9,10 +9,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.VectorConverter
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -20,6 +22,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -67,11 +70,11 @@ fun AddproductScreen(){
     var unitproductprice by remember { mutableStateOf("") }
     var desc by remember { mutableStateOf("") }
 
-    Column (modifier = Modifier.fillMaxSize().padding(20.dp),
+    Column (modifier = Modifier.fillMaxSize().padding(20.dp).background(color = Color.Black),
         horizontalAlignment = Alignment.CenterHorizontally){
         Text(text = "ADD NEW PRODUCT",
             fontSize = 30.sp,
-            color = Color.Red,
+            color = Color.White,
             fontFamily = FontFamily.Cursive,
             fontStyle = FontStyle.Normal,
             textAlign = TextAlign.Center,
@@ -92,22 +95,26 @@ fun AddproductScreen(){
             onValueChange = {newProductname ->productname=newProductname},
             label = { Text(text = "Enter Product Name") },
             placeholder = { Text(text = "Please enter product name") },
-            modifier = Modifier.fillMaxWidth())
+            modifier = Modifier.fillMaxWidth().border(1.dp, Color.Magenta, RoundedCornerShape(12.dp)))
+        Spacer(modifier = Modifier.height(16.dp))
         OutlinedTextField(value = productquantity,
             onValueChange = {newProductquantity ->productquantity=newProductquantity},
             label = { Text(text = " Enter Product Quantity") },
             placeholder = { Text(text = "Please enter product quantity") },
-            modifier = Modifier.fillMaxWidth())
+            modifier = Modifier.fillMaxWidth().border(1.dp, Color.Magenta, RoundedCornerShape(12.dp)))
+        Spacer(modifier = Modifier.height(16.dp))
         OutlinedTextField(value = unitproductprice,
             onValueChange = {unitProductprice ->unitproductprice=unitProductprice},
             label = { Text(text = "Enter new unit product price") },
             placeholder = { Text(text = "Please enter unit product price") },
-            modifier = Modifier.fillMaxWidth())
+            modifier = Modifier.fillMaxWidth().border(1.dp, Color.Magenta, RoundedCornerShape(12.dp)))
+        Spacer(modifier = Modifier.height(16.dp))
         OutlinedTextField(value = desc,
             onValueChange = {newDesc->desc=newDesc},
             label = { Text(text = "Brief Description") },
             placeholder = { Text(text = "Please Enter Product Description") },
-            modifier = Modifier.fillMaxWidth().height(150.dp), singleLine = false)
+            modifier = Modifier.fillMaxWidth().height(150.dp).border(1.dp, Color.Magenta, RoundedCornerShape(12.dp)), singleLine = false)
+        Spacer(modifier = Modifier.height(16.dp))
         Row (modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween){
             Button(onClick = {}, colors = ButtonDefaults.buttonColors(Color.Black)) {
